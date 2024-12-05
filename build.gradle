@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 34
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    // Point to the prebuilt AAR file
+    repositories {
+        flatDir {
+            dirs 'aar'
+        }
+    }
+}
+
+dependencies {
+    implementation(name: 'my-sdk-release', ext: 'aar')
+}
