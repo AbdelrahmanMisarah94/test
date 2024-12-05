@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 34
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+publishing {
+    publications {
+        aar(MavenPublication) {
+            from components.release
+            groupId = 'com.github.AbdelrahmanMisarah94'
+            artifactId = 'my-android-sdk'
+            version = '1.0.0'
+        }
+    }
+}

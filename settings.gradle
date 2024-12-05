@@ -1,1 +1,2 @@
-rootProject.name = "test"
+rootProject.name = "my-android-sdk-wrapper"
+include ':library'

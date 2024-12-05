@@ -1,15 +1,11 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'maven-publish'
+}
 
-android {
-    compileSdkVersion 34
-
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 34
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 
-dependencies {
-    // Include the prebuilt AAR
-    implementation files('libs/my-sdk-release.aar')
-}
